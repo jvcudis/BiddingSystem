@@ -1,15 +1,16 @@
 package org.fpt.config;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.ImportResource;
 
 @Configuration
 @EnableAspectJAutoProxy
-@ImportResource({ "classpath:aspect-config.xml" })
+@ComponentScan({ "org.fpt.aspect" })
 public class AspectConfig {
 	
 	public AspectConfig() {
 		super();
 	}
+
 }
