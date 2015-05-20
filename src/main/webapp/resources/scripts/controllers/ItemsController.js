@@ -1,0 +1,1 @@
+var biddingControllers = angular.module('biddingControllers');

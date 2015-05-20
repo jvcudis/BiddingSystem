@@ -3,6 +3,7 @@
 <head>
 	<title>FPT Bidding System</title>
 	<link href="webjars/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet">
+	<link href="resources/styles/app.css" rel="stylesheet">
 </head>
 <body ng-controller="MainCtrl">
 
@@ -36,7 +37,7 @@
 		</div>
 	</nav>
 
-	<div class="container">
+	<div id="bds-container" class="container">
 		<div class="alert alert-danger" ng-show="error">{{error}}</div>
 		<div ng-view></div>
 	</div>

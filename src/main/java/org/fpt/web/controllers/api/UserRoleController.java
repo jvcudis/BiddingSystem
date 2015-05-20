@@ -2,21 +2,33 @@ package org.fpt.web.controllers.api;
 
 import java.util.List;
 
-import org.fpt.persistence.models.UserRole;
-import org.fpt.persistence.services.UserRoleService;
+import org.fpt.orm.models.UserRole;
+import org.fpt.orm.services.interfaces.IUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-@RestController
+@Controller
+@RequestMapping("/user_roles")
 public class UserRoleController {
 
 	@Autowired
-	private UserRoleService roleService;
+	private IUserRoleService userRoleService;
 
-	@RequestMapping("/user_roles")
-	public List<UserRole> getUserRoles() {
-		return roleService.getRoles();
+	@RequestMapping
+	public @ResponseBody List<UserRole> getAllRoles() {
+		return userRoleService.getAllRoles();
 	}
 	
+	@RequestMapping("/{id}")
+	public @ResponseBody UserRole getRoleById(@PathVariable final Integer id) {
+		return userRoleService.getRoleById(id);
+	}
+	
+	@RequestMapping("/role/{name}")
+	public @ResponseBody UserRole getRoleByName(@PathVariable String name) {
+		return userRoleService.getRoleByName(name);
+	}
 }

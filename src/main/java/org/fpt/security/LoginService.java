@@ -1,11 +1,11 @@
-package org.fpt.persistence.services;
+package org.fpt.security;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.fpt.persistence.dao.IUserDao;
+import org.fpt.orm.dao.interfaces.IUserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -32,18 +32,18 @@ public class LoginService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
  
-		org.fpt.persistence.models.User user = userDao.findUserByUsername(username);
+		org.fpt.orm.models.User user = userDao.findUserByUsername("hpotter");
 		
 		System.out.println(user);
-		List<GrantedAuthority> authorities = buildUserAuthority(user.getRole());
+		List<GrantedAuthority> authorities = buildUserAuthority("");
  
 		return buildUserForAuthentication(user, authorities);
 	}
 	
 	// Converts local User user to
 	// org.springframework.security.core.userdetails.User
-	private User buildUserForAuthentication(org.fpt.persistence.models.User user, List<GrantedAuthority> authorities) {
-		return new User(user.getEmail(), user.getPassword(), true, true, true, true, authorities);
+	private User buildUserForAuthentication(org.fpt.orm.models.User user, List<GrantedAuthority> authorities) {
+		return new User(user.getUserEmail(), user.getUserPassword(), true, true, true, true, authorities);
 	}
 	 
 	private List<GrantedAuthority> buildUserAuthority(String userRole) {

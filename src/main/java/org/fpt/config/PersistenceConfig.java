@@ -40,7 +40,7 @@ public class PersistenceConfig {
     public LocalSessionFactoryBean sessionFactory() {
         final LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(restDataSource());
-        sessionFactory.setPackagesToScan(new String[] { "org.fpt.persistence.models" });
+        sessionFactory.setPackagesToScan(new String[] { "org.fpt.orm.models" });
         sessionFactory.setHibernateProperties(hibernateProperties());
 
         return sessionFactory;
@@ -62,7 +62,7 @@ public class PersistenceConfig {
     public HibernateTransactionManager transactionManager(final SessionFactory sessionFactory) {
         final HibernateTransactionManager txManager = new HibernateTransactionManager();
         txManager.setSessionFactory(sessionFactory);
-
+ 
         return txManager;
     }
 

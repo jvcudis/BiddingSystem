@@ -1,7 +1,7 @@
 package org.fpt.config.intializers;
 
-import org.springframework.core.annotation.Order;
-import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+//import org.springframework.core.annotation.Order;
+//import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 /**
  * Sets up the Spring Security filter chain

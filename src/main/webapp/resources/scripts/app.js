@@ -10,6 +10,9 @@ angular
 		}).when('/items', {
 			templateUrl : 'resources/views/protected/items.html',
 			controller : 'ItemsCtrl'
+		}).when('/items/:id', {
+			templateUrl : 'resources/views/protected/items.html',
+			controller : 'ItemInstanceCtrl'
 		})
 		.otherwise('/');
 
@@ -64,7 +67,15 @@ angular
 
 	        };
 		}).controller('ItemsCtrl', function($scope, $http) {
-			console.log("displaying items...");
+			$http.get('user_roles').success(function(data) {
+				$scope.items = data;
+				console.log($scope.items);
+			});
+			console.log($scope.items);
+				
+		}).controller('ItemInstanceCtrl', function($scope, $http) {
+			
+			
 		}).controller('MainCtrl', function($scope, $http, $location) {
 			
 });
