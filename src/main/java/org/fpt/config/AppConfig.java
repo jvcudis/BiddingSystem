@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
  */
 @Configuration
 @ComponentScan({ "org.fpt" })
-@Import({ WebConfig.class, PersistenceConfig.class, AspectConfig.class })
+@Import({ WebConfig.class, PersistenceConfig.class, SecurityConfig.class, AspectConfig.class })
 public class AppConfig {
 	
 	public AppConfig() {

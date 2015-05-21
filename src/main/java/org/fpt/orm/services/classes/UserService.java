@@ -3,6 +3,7 @@ package org.fpt.orm.services.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.fpt.aspect.annotations.PerfLog;
 import org.fpt.orm.models.User;
 import org.fpt.orm.services.common.GenericService;
 import org.fpt.orm.dao.common.IOperations;
@@ -28,6 +29,7 @@ public class UserService extends GenericService<User> implements IUserService {
     }
 
     @Override
+    @PerfLog
 	public List<User> getAllUsers() {
     	List<User> users = new ArrayList<User>();
 		users = getDao().findAll();
@@ -42,6 +44,7 @@ public class UserService extends GenericService<User> implements IUserService {
 	}
 
 	@Override
+	@PerfLog
 	public User getUserById(Integer id) {
 		User user = getDao().findOne(id);
 		
@@ -51,6 +54,7 @@ public class UserService extends GenericService<User> implements IUserService {
 	}
 
 	@Override
+	@PerfLog
 	public User getUserByUsername(String username) {
 		User user = new User();
 		user = dao.findUserByUsername(username);
@@ -66,6 +70,7 @@ public class UserService extends GenericService<User> implements IUserService {
 	}
 
 	@Override
+	@PerfLog
 	public List<User> getAllUsersWithRole(Integer roleId) {
 		List<User> users = new ArrayList<User>();
 		users = dao.findUsersWithRole(roleId);
@@ -81,6 +86,7 @@ public class UserService extends GenericService<User> implements IUserService {
 	}
 	
 	@Override
+	@PerfLog
 	public User createUser(UserForm form) {
 		User user = dao.createUser(form);
 		
@@ -95,6 +101,7 @@ public class UserService extends GenericService<User> implements IUserService {
 	}
 
 	@Override
+	@PerfLog
 	public User updateUser(Integer id, UserForm form) {
 		User user = dao.updateUser(id, form);
 		
@@ -108,8 +115,8 @@ public class UserService extends GenericService<User> implements IUserService {
 		}
 	}
 	
-	
 	@Override
+	@PerfLog
 	public User deleteUserById(Integer id) {
 		User user = getDao().findOne(id);
 		getDao().deleteById(id);

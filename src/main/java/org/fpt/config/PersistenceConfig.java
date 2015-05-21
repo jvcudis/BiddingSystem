@@ -24,9 +24,9 @@ import com.google.common.base.Preconditions;
  *
  */
 
-@PropertySource({ "classpath:persistence-mysql.properties" })
-@EnableTransactionManagement
 @Configuration
+@EnableTransactionManagement
+@PropertySource({ "classpath:persistence-mysql.properties" })
 public class PersistenceConfig {
 	
 	@Autowired

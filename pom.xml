@@ -319,6 +319,7 @@
     		</executions>
 		</plugin>
 		
+		<!-- Aspect Weaving -->
 <!-- 		<plugin> -->
 <!--  			<groupId>org.codehaus.mojo</groupId> -->
 <!--  			<artifactId>aspectj-maven-plugin</artifactId> -->
@@ -327,12 +328,12 @@
 <!--   				<dependency> -->
 <!--    					<groupId>org.aspectj</groupId> -->
 <!--    					<artifactId>aspectjrt</artifactId> -->
-<!--    					<version>${aspectj.version}</version> -->
+<!--    					<version>1.6.1</version> -->
 <!--   				</dependency> -->
 <!--   				<dependency> -->
 <!--    					<groupId>org.aspectj</groupId> -->
 <!--    					<artifactId>aspectjtools</artifactId> -->
-<!--    					<version>${aspectj.version}</version> -->
+<!--    					<version>1.6.1</version> -->
 <!--   				</dependency> -->
 <!--  			</dependencies> -->
 <!--  			<executions> -->
@@ -344,16 +345,18 @@
 <!--   				</execution> -->
 <!--  			</executions> -->
 <!--  			<configuration> -->
-<!--   				<outxml>true</outxml> -->
-<!--   				<aspectLibraries> -->
-<!--    					<aspectLibrary> -->
-<!--     					<groupId>org.springframework</groupId> -->
-<!--     					<artifactId>spring-aspects</artifactId> -->
-<!--    					</aspectLibrary> -->
-<!--   				</aspectLibraries> -->
-<!--   				<source>1.6</source> -->
-<!--   				<target>1.6</target> -->
-<!-- 			</configuration> -->
+<!--                 <outxml>true</outxml> -->
+<!--                 <verbose>true</verbose> -->
+<!--                 <showWeaveInfo>true</showWeaveInfo> -->
+<!--                 <aspectLibraries> -->
+<!--                     <aspectLibrary> -->
+<!--                         <groupId>org.springframework</groupId> -->
+<!--                         <artifactId>spring-aspects</artifactId> -->
+<!--                     </aspectLibrary> -->
+<!--                 </aspectLibraries> -->
+<!--                 <source>1.6</source> -->
+<!--                 <target>1.6</target> -->
+<!--             </configuration> -->
 <!-- 		</plugin> -->
 		
 	</plugins>

@@ -11,23 +11,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/user_roles")
+@RequestMapping("/api")
 public class UserRoleController {
 
 	@Autowired
 	private IUserRoleService userRoleService;
 
-	@RequestMapping
+	@RequestMapping("/user_roles")
 	public @ResponseBody List<UserRole> getAllRoles() {
 		return userRoleService.getAllRoles();
 	}
 	
-	@RequestMapping("/{id}")
+	@RequestMapping("/user_roles/{id}")
 	public @ResponseBody UserRole getRoleById(@PathVariable final Integer id) {
 		return userRoleService.getRoleById(id);
 	}
 	
-	@RequestMapping("/role/{name}")
+	@RequestMapping("/user_roless/role/{name}")
 	public @ResponseBody UserRole getRoleByName(@PathVariable String name) {
 		return userRoleService.getRoleByName(name);
 	}
