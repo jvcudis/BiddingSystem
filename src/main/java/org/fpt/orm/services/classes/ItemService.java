@@ -3,6 +3,7 @@ package org.fpt.orm.services.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.fpt.aspect.annotations.PerfLog;
 import org.fpt.orm.models.Item;
 import org.fpt.orm.services.common.GenericService;
 import org.fpt.orm.services.interfaces.IItemService;
@@ -28,6 +29,7 @@ public class ItemService extends GenericService<Item> implements IItemService {
     }
 
     @Override
+    @PerfLog
 	public List<Item> getAllItems() {
     	List<Item> items = new ArrayList<Item>();
 		items = getDao().findAll();
@@ -42,6 +44,7 @@ public class ItemService extends GenericService<Item> implements IItemService {
 	}
 
 	@Override
+	@PerfLog
 	public List<Item> getAllItemsByOwner(Integer ownerId) {
 		List<Item> items = new ArrayList<Item>();
 		items = dao.findItemsByOwner(ownerId);
@@ -66,6 +69,7 @@ public class ItemService extends GenericService<Item> implements IItemService {
 	}
 
 	@Override
+	@PerfLog
 	public Item createItem(ItemForm form) {
 		Item item = dao.createItem(form);
 		
@@ -80,6 +84,7 @@ public class ItemService extends GenericService<Item> implements IItemService {
 	}
 
 	@Override
+	@PerfLog
 	public Item updateItem(Integer id, ItemForm form) {
 		Item item = dao.updateItem(id, form);
 		
@@ -94,6 +99,7 @@ public class ItemService extends GenericService<Item> implements IItemService {
 	}
 
 	@Override
+	@PerfLog
 	public Item deleteItemById(Integer id) {
 		Item item = getDao().findOne(id);
 		getDao().deleteById(id);

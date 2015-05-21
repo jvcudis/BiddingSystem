@@ -3,6 +3,7 @@ package org.fpt.orm.services.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.fpt.aspect.annotations.PerfLog;
 import org.fpt.orm.services.common.GenericService;
 import org.fpt.orm.models.UserRole;
 import org.fpt.orm.dao.common.IOperations;
@@ -27,6 +28,7 @@ public class UserRoleService extends GenericService<UserRole> implements IUserRo
     }
 
     @Override
+    @PerfLog
 	public List<UserRole> getAllRoles() {
 		List<UserRole> roles = new ArrayList<UserRole>();
 		roles = getDao().findAll();
@@ -42,6 +44,7 @@ public class UserRoleService extends GenericService<UserRole> implements IUserRo
 	}
 
 	@Override
+	@PerfLog
 	public UserRole getRoleById(Integer id) {
 		UserRole role = getDao().findOne(id);
 		
@@ -56,6 +59,7 @@ public class UserRoleService extends GenericService<UserRole> implements IUserRo
 	}
 
 	@Override
+	@PerfLog
 	public UserRole getRoleByName(String name) {
 		UserRole role = new UserRole();
 		role = dao.findRoleByName(name);

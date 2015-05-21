@@ -3,6 +3,7 @@ package org.fpt.orm.services.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.fpt.aspect.annotations.PerfLog;
 import org.fpt.orm.models.Bid;
 import org.fpt.orm.services.common.GenericService;
 import org.fpt.orm.services.interfaces.IBidService;
@@ -28,6 +29,7 @@ public class BidService extends GenericService<Bid> implements IBidService {
     }
 
 	@Override
+	@PerfLog
 	public List<Bid> getAllBids() {
 		List<Bid> bids = new ArrayList<Bid>();
 		bids = getDao().findAll();
@@ -42,6 +44,7 @@ public class BidService extends GenericService<Bid> implements IBidService {
 	}
 
 	@Override
+	@PerfLog
 	public List<Bid> getAllBidsByOwner(Integer ownerId) {
 		List<Bid> bids = new ArrayList<Bid>();
 		bids = dao.findAllBidsByOwner(ownerId);
@@ -56,6 +59,7 @@ public class BidService extends GenericService<Bid> implements IBidService {
 	}
 
 	@Override
+	@PerfLog
 	public List<Bid> getAllBidsByItem(Integer itemId) {
 		List<Bid> bids = new ArrayList<Bid>();
 		bids = dao.findAllBidsByItem(itemId);
@@ -79,6 +83,7 @@ public class BidService extends GenericService<Bid> implements IBidService {
 	}
 
 	@Override
+	@PerfLog
 	public Bid createBid(BidForm form) {
 		Bid bid = dao.createBid(form);
 		
@@ -107,6 +112,7 @@ public class BidService extends GenericService<Bid> implements IBidService {
 	}
 	
 	@Override
+	@PerfLog
 	public Bid deleteBidById(Integer id) {
 		Bid bid = getDao().findOne(id);
 		getDao().deleteById(id);
