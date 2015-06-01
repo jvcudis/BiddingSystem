@@ -23,7 +23,7 @@
  
 	</appender>
  
-	<logger name="org.fpt" level="debug" additivity="false">
+	<logger name="org.bidding" level="debug" additivity="false">
 		<appender-ref ref="FILE-AUDIT" />
 	</logger>
  
