@@ -1,4 +1,4 @@
-# FPTBiddingSystem
+# BiddingSystem
 Spring 4 + Hibernate 4 + AngularJS
 
 ### Functional Requirements:
