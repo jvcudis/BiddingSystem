@@ -275,7 +275,7 @@
   	<aspectj.version>1.7.3</aspectj.version>
   	
   	<!-- RESTful support -->
-  	<jackson.version>2.4.0</jackson.version>
+  	<jackson.version>2.9.10.5</jackson.version>
    	<jaxb-api.version>2.2.11</jaxb-api.version>
    	<jackson.asl.version>1.9.13</jackson.asl.version>
   	
