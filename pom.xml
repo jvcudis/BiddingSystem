@@ -269,7 +269,7 @@
   	<tomcat.dbcp.version>7.0.42</tomcat.dbcp.version>
   	
   	<!-- security -->
-  	<spring.security.version>4.0.1.RELEASE</spring.security.version>
+  	<spring.security.version>5.2.10.RELEASE</spring.security.version>
   	
   	<!-- aspects -->
   	<aspectj.version>1.7.3</aspectj.version>
